@@ -1,0 +1,10 @@
+<!--复写admin后台模板,将admin的title"django管理"改成"投票管理"字样.同时,我们还可以自定义admin/index.html-->
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
